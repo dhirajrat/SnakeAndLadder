@@ -24,7 +24,14 @@ public class SnakeAndLadder {
 			
 			if(currentPosition>=100) {
 				System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
-			}
+				if(currentPosition > 100) {
+					currentPosition = currentPosition - die;
+				}
+				else 
+				{
+					System.out.println("*****\nwinning psition = "+currentPosition+"\n********");
+				}
+				}
 			
 			option = (int) Math.floor(Math.random()*10)%3;
 			
@@ -37,7 +44,10 @@ public class SnakeAndLadder {
 		case ladder:
 			currentPosition = currentPosition + die;
 			System.out.println("(Ladder) Goes Ahead by " + die +" Position is = "+currentPosition);
-			
+			if(currentPosition <=100)
+			{
+				System.out.println("*****\nwinning psition = 100"+"\n********");
+			}
 			break;
 		case snake:
 			currentPosition = currentPosition - die;
